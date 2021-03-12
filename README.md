@@ -38,7 +38,7 @@ git config --global user.name "USERNAME"
 git config --global user.email "EMAIL"
 ```
 
-[Generate a GPG-key](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-gpg-key) for GitHub commit signing
+[Generate a GPG-key](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-gpg-key) for GitHub [commit signing](https://docs.github.com/en/github/authenticating-to-github/signing-commits)
 
 ```bash
 gpg --full-generate-key
