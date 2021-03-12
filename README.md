@@ -3,7 +3,6 @@ ubuntu-ws
 
 My Ubuntu 20.04 virtual workstation settings
 
-
 Initial Setup
 -----------------
 
@@ -39,6 +38,14 @@ git config --global user.name "USERNAME"
 git config --global user.email "EMAIL"
 ```
 
+VS Code installation as a Snap package
+
+```bash
+sudo snap install --classic code
+```
+
+Then [Setting Sync](https://code.visualstudio.com/docs/editor/settings-sync).
+
 Ansible Installation
 ------------------------
 
@@ -56,8 +63,9 @@ ansible 2.9.18
 
 ```
 
-
 Host Self Setup Using Ansible
 -----------------------------------
 
+```bash
 git clone git@github.com:and1er/ubuntu-ws.git
+```
