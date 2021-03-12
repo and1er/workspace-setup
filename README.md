@@ -38,6 +38,25 @@ git config --global user.name "USERNAME"
 git config --global user.email "EMAIL"
 ```
 
+[Generate a GPG-key](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-gpg-key) for GitHub commit signing
+
+```bash
+gpg --full-generate-key
+gpg --list-secret-keys --keyid-format LONG
+```
+
+[Adding a new GPG key to your GitHub account](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-gpg-key-to-your-github-account)
+
+```bash
+gpg --armor --export <KEY-ID>
+```
+
+[Telling Git about your signing key](https://docs.github.com/en/github/authenticating-to-github/telling-git-about-your-signing-key)
+
+```bash
+git config --global user.signingkey <KEY-ID>
+```
+
 VS Code installation as a Snap package
 
 ```bash
