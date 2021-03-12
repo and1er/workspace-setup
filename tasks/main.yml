@@ -1,0 +1,12 @@
+---
+- name: Update apt cache.
+  become: yes
+  apt:
+    update_cache: yes
+    cache_valid_time: 300
+
+- name: Install Required Packages.
+  become: yes
+  apt:
+    state: present
+    name: "{{ packages_to_install }}"

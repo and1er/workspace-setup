@@ -66,6 +66,15 @@ ansible 2.9.18
 Host Self Setup Using Ansible
 -----------------------------------
 
+Clone the repository
+
 ```bash
-git clone git@github.com:and1er/ubuntu-ws.git
+git clone https://github.com/and1er/ubuntu-ws.git
+cd ubuntu-ws/
+```
+
+Run the playbook as `whoami` with `sudo`
+
+```bash
+ansible-playbook -i inventory local-ws-setup.yml -K
 ```

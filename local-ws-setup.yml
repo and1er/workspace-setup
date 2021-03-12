@@ -1,0 +1,10 @@
+---
+- name: Local Workstation Setup Using Ansible
+  hosts: localhost
+  connection: local
+
+  vars_files:
+    - vars/main.yml
+
+  tasks:
+    - include_tasks: tasks/main.yml

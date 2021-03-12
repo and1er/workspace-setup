@@ -1,0 +1,22 @@
+---
+packages_to_install:
+  - build-essential
+  - curl
+  - dkms
+  - dnsutils
+  - git
+  - jq
+  - man
+  - man-db
+  - nfs-common
+  - python3
+  - python3-pip
+  - python3-venv
+  - rsync
+  - ssh-client
+  - sshpass
+  - telnet
+  - tree
+  - unzip
+  - vim
+  - wget
