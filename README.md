@@ -55,6 +55,7 @@ gpg --armor --export <KEY-ID>
 
 ```bash
 git config --global user.signingkey <KEY-ID>
+git config --global commit.gpgsign true
 ```
 
 VS Code installation as a Snap package
