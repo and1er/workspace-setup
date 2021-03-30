@@ -20,3 +20,6 @@ packages_to_install:
   - unzip
   - vim
   - wget
+
+user_bin_dir: ~/.local/bin/
+terraform_version: "0.14.9"
