@@ -32,3 +32,11 @@
     remote_src: yes
     creates: "{{ user_bin_dir }}/terraform"
   tags: terraform
+
+- name: Install golang from an official .zip-archive.
+  unarchive:
+    src: "https://golang.org/dl/go{{ golang_version }}.linux-amd64.tar.gz"
+    dest: "{{ user_bin_dir}}"
+    remote_src: yes
+    creates: "{{ user_bin_dir }}/go/bin/go"
+  tags: go

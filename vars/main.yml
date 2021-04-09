@@ -23,3 +23,4 @@ packages_to_install:
 
 user_bin_dir: ~/.local/bin/
 terraform_version: "0.14.9"
+golang_version: "1.16.3"
