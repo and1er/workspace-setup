@@ -70,11 +70,11 @@ Ansible Installation
 ------------------------
 
 ```bash
-python3 -m venv ~/ansible_venv
+python3 -m venv ~/ansible_venv_2.9
 
 source ~/ansible_venv/bin/activate
 
-(ansible_venv) $ pip install 'ansible<=2.10'
+(ansible_venv) $ pip install 'ansible<2.10'
 
 (ansible_venv) $ ansible --version
 ansible 2.9.18
