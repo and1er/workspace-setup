@@ -13,3 +13,9 @@
   loop:
     - "{{ golang_gopath_bin_dir }}"
     - "{{ golang_gopath_src_dir }}"
+
+- name: Install golangci-lint linter to "{{ golang_gopath_bin_dir }}/golangci-lint".
+  shell:
+    cmd: curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b {{ golang_gopath_bin_dir }} v{{ golang_golangci_lint_version }}
+  args:
+    creates: "{{ golang_gopath_bin_dir }}/golangci-lint"
