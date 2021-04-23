@@ -1,0 +1,15 @@
+---
+- name: Install golang from an official .zip-archive.
+  unarchive:
+    src: "https://golang.org/dl/go{{ golang_version }}.linux-amd64.tar.gz"
+    dest: "{{ user_bin_dir}}"
+    remote_src: yes
+    creates: "{{ user_bin_dir }}/go/bin/go"
+
+- name: Ensure Golang directories exist.
+  file:
+    path: "{{ item }}"
+    state: directory
+  loop:
+    - "{{ golang_gopath_bin_dir }}"
+    - "{{ golang_gopath_src_dir }}"

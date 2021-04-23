@@ -7,4 +7,9 @@
     - vars/main.yml
 
   tasks:
-    - import_tasks: tasks/main.yml
+    - import_tasks: tasks/common.yml
+      tags: common
+    - import_tasks: tasks/install_go.yml
+      tags: go
+    - import_tasks: tasks/install_terraform.yml
+      tags: terraform

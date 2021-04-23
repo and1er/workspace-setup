@@ -21,6 +21,13 @@ packages_to_install:
   - vim
   - wget
 
+user_home_dir: "~"
+# user_home_dir: "{{ lookup('env','HOME') }}"
 user_bin_dir: ~/.local/bin/
+
 terraform_version: "0.14.9"
+
 golang_version: "1.16.3"
+golang_gopath_dir: "{{ user_home_dir }}/go"
+golang_gopath_bin_dir: "{{ golang_gopath_dir }}/bin"
+golang_gopath_src_dir: "{{ golang_gopath_dir }}/src"
