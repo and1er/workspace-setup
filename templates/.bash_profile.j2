@@ -1,4 +1,7 @@
 # {{ ansible_managed }}
+
+source ~/.bashrc
+
 # User own binaries.
 export PATH=$PATH:{{ user_bin_dir }}
 
@@ -6,3 +9,6 @@ export PATH=$PATH:{{ user_bin_dir }}
 export PATH=$PATH:{{ user_bin_dir }}/go/bin
 export GOPATH=$(go env GOPATH)
 export PATH=$PATH:$(go env GOPATH)/bin
+
+# GPG key prompt on Git commits.
+export GPG_TTY=$(tty)
