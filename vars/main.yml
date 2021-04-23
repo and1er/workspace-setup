@@ -25,7 +25,7 @@ user_home_dir: "~"
 # user_home_dir: "{{ lookup('env','HOME') }}"
 user_bin_dir: ~/.local/bin/
 
-terraform_version: "0.14.9"
+terraform_version: "0.15.0"
 
 golang_version: "1.16.3"
 golang_gopath_dir: "{{ user_home_dir }}/go"
