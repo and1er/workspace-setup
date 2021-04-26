@@ -5,5 +5,10 @@
     dest: "{{ user_bin_dir}}"
     remote_src: yes
     creates: "{{ user_bin_dir }}/terraform"
-  tags: terraform
 
+- name: Install terrascan from GitHub release page.
+  unarchive:
+    src: "https://github.com/accurics/terrascan/releases/download/v{{ terrascan_version }}/terrascan_{{ terrascan_version }}_Linux_x86_64.tar.gz"
+    dest: "{{ user_bin_dir}}"
+    remote_src: yes
+    creates: "{{ user_bin_dir }}/terrascan"
