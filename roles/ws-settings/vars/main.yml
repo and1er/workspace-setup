@@ -11,7 +11,6 @@ packages_to_install:
   - man
   - man-db
   - nfs-common
-  - openjdk-11-jdk
   - python3
   - python3-pip
   - python3-venv
@@ -36,3 +35,5 @@ golang_gopath_dir: "{{ user_home_dir }}/go"
 golang_gopath_bin_dir: "{{ golang_gopath_dir }}/bin"
 golang_gopath_src_dir: "{{ golang_gopath_dir }}/src"
 golang_golangci_lint_version: "1.39.0"
+
+java_jdk_package: openjdk-11-jdk

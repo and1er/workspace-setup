@@ -1,0 +1,11 @@
+---
+- name: Install Java packages
+  apt:
+    name:
+      - "{{ java_jdk_package }}"
+      - gradle
+      - maven
+      - checkstyle
+    update_cache: yes
+    cache_valid_time: 3600
+  become: yes
