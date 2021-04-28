@@ -1,15 +1,7 @@
 ---
 - name: Local Workstation Setup Using Ansible
-  hosts: localhost
+  hosts: 127.0.0.1
   connection: local
 
-  vars_files:
-    - vars/main.yml
-
-  tasks:
-    - import_tasks: tasks/common.yml
-      tags: common
-    - import_tasks: tasks/install_go.yml
-      tags: go
-    - import_tasks: tasks/install_terraform.yml
-      tags: terraform
+  roles:
+    - ws-settings
