@@ -69,14 +69,54 @@ Then [Setting Sync](https://code.visualstudio.com/docs/editor/settings-sync).
 Ansible Installation
 ------------------------
 
+Ansible is installed to a python virtual environment (venv). In this case it's possible to have multiple Ansible versions in parallel and to get any version.
+
+To create a venv with Ansible 3
+
+```bash
+python3 -m venv ~/ansible_venv_3
+
+source ~/ansible_venv_3/bin/activate
+
+(ansible_venv_3) $ pip install wheel 'ansible>=3.0,<4'
+
+(ansible_venv_3) $ $ ansible --version
+ansible 2.10.8
+
+  ...
+
+  python version = 3.8.5 (default, Jan 27 2021, 15:41:15) [GCC 9.3.0]
+
+(ansible_venv_3) $ pip list
+Package       Version
+------------- -------
+ansible       3.3.0  
+ansible-base  2.10.8 
+cffi          1.14.5 
+cryptography  3.4.7  
+Jinja2        2.11.3 
+MarkupSafe    1.1.1  
+packaging     20.9   
+pip           20.0.2 
+pkg-resources 0.0.0  
+pycparser     2.20   
+pyparsing     2.4.7  
+PyYAML        5.4.1  
+setuptools    44.0.0 
+wheel         0.36.2 
+
+```
+
+If Ansible 2.9 is also needed:
+
 ```bash
 python3 -m venv ~/ansible_venv_2.9
 
-source ~/ansible_venv/bin/activate
+source ~/ansible_venv_2.9/bin/activate
 
-(ansible_venv) $ pip install 'ansible<2.10'
+(ansible_venv_2.9) $ pip install 'ansible<2.10'
 
-(ansible_venv) $ ansible --version
+(ansible_venv_2.9) $ ansible --version
 ansible 2.9.18
   ...
   python version = 3.8.5 (default, Jan 27 2021, 15:41:15) [GCC 9.3.0]
@@ -91,6 +131,12 @@ Clone the repository
 ```bash
 git clone https://github.com/and1er/ubuntu-ws.git
 cd ubuntu-ws/
+```
+
+Activate a venv with Ansible
+
+```bash
+source ~/ansible_venv_3/bin/activate
 ```
 
 Run the playbook as `whoami` with `sudo`
