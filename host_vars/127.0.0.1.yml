@@ -1,0 +1,9 @@
+---
+pip_install_packages:
+  - name: docker
+    version: "5.0.0"
+
+docker_install_compose: true
+docker_compose_version: "1.29.1"
+docker_users:
+  - "{{ ansible_user_id }}"

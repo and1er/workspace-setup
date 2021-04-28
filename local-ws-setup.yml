@@ -4,4 +4,9 @@
   connection: local
 
   roles:
-    - ws-settings
+    - name: ws-settings
+
+    - name: geerlingguy.pip
+    
+    - name: geerlingguy.docker
+      become: yes

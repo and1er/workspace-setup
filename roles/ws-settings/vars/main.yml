@@ -1,6 +1,8 @@
 ---
 packages_to_install:
+  - apt-transport-https
   - build-essential
+  - ca-certificates
   - curl
   - dkms
   - dnsutils
