@@ -139,6 +139,13 @@ Activate a venv with Ansible
 source ~/ansible_venv_3/bin/activate
 ```
 
+Install Ansible role and collection requirements
+
+```bash
+ansible-galaxy role install -r requirements.yml
+ansible-galaxy collection install -r requirements.yml
+```
+
 Run the playbook as `whoami` with `sudo`
 
 ```bash
