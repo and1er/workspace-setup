@@ -2,6 +2,8 @@
 pip_install_packages:
   - name: docker
     version: "5.0.0"
+  - name: boto3
+    version: "1.17.60"
 
 docker_install_compose: true
 docker_compose_version: "1.29.1"
