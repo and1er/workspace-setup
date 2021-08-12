@@ -1,9 +1,22 @@
 ubuntu-ws
 =============
 
-My Ubuntu 20.04 virtual workstation settings
+My Ubuntu 20.04 virtual workstation settings.
 
-Initial Setup
+VM Creation
+-----------------
+
+One way is to create VM using Vagrant. But it could be created any other way.
+
+For Vagrant case:
+
+```bash
+cd vagrant
+vagrant up
+vagrant ssh
+```
+
+Provisioning
 -----------------
 
 Upgrade the distro to the actual state
