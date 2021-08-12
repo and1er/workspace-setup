@@ -1,4 +1,28 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/focal64"
-  config.vm.box_version = "20210810.0.0"
+
+  # Do not deploy default vagrant SSH-key.
+  config.ssh.insert_key = false
+
+  # Workstation host settings.
+  config.vm.define "ws" do |ws|
+    ws.vm.box = "ubuntu/focal64"
+    ws.vm.box_version = "20210810.0.0"
+
+    ws.vm.hostname = "ubuntu-ws"
+    ws.vm.network :private_network, ip: "192.168.30.30"
+    ws.vm.synced_folder ".", "/vagrant", disabled: true
+
+    ws.vm.provider :virtualbox do |vb|
+      vb.name = "ws_ubuntu_20"
+      vb.cpus = 4
+      vb.memory = 2048
+      vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+      vb.customize ["modifyvm", :id, "--ioapic", "on"]
+    end
+  end
+
+  # --- Provisioning ---
+
+  # Deploy own public SSH-keys.
+  config.vm.provision "file", source: "./authorized_keys", destination: "/home/vagrant/.ssh/authorized_keys"
 end
