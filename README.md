@@ -8,8 +8,9 @@ I use Visual Studio Code to connect to the VM using Remote SSH feature to work i
 
 ### 1. Create a VM
 
-* The goal is to make a VM available for incoming SSH connections and work there via VSCode Remote-SSH connection.
-  That helps to avoid VM UI usage.
+* Goals are:
+  1. VM is available for SSH connections (via terminal and VSCode Remote-SSH).
+  2. VM has local Ansible installation for self-provisioning.
 * VM could be created with any way (I'm gonna try and note different approaches)
   1. a local VM (VirtualBox, Hyper-V, VMWare etc);
      * [manual](./vm-creation/manual/README.md);
