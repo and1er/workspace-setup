@@ -4,40 +4,23 @@ My reproducible Linux workstation setup.
 
 I use Visual Studio Code to connect to the VM using Remote SSH feature to work in isolated VM.
 
-## VM creation using Vagrant
+## Workflow
 
-One way is to create VM using Vagrant. But it could be created any other way.
+### 1. Create a VM
 
-### Requirements
+* The goal is to make a VM available for incoming SSH connections and work there via VSCode Remote-SSH connection.
+  That helps to avoid VM UI usage.
+* VM could be created with any way (I'm gonna try and note different approaches)
+  1. a local VM (VirtualBox, Hyper-V, VMWare etc);
+     * [manual](./vm-creation/manual/README.md);
+     * [Vagrant](./vm-creation/vagrant/README.md);
+  2. a cloud instance (AWS, GCP, Digital Ocean etc);
+  3. [Windows WSL](./vm-creation/wsl/README.md) (in this case use Windows-WSL integration instead of SSH).
+* As OS for now only **Ubuntu 20.04** was taken. But in the future I would try another Linux distributions.
 
-Tested on following version of Vagrant and VirtualBox
+### 2. Prepare SSH and GPG keys for GitHub
 
-```bash
-$ vagrant --version
-Vagrant 2.2.16
-
-$ VBoxManage --version
-6.1.22r144080
-```
-
-### VM up
-
-```bash
-cd vagrant
-# Create `authorized_keys` file with your public keys (format see in `authorized_keys.example`)
-#   e.g. like this:
-cat ~/.ssh/id_ed25519.pub > ./authorized_keys
-
-vagrant up
-```
-
-VM will be available for direct SSH connection as
-
-```bash
-ssh vagrant@192.168.30.30
-```
-
-This is needed for VS Code connection.
+### 3. Provision the VM
 
 ## Provisioning
 
