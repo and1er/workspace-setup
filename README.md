@@ -1,6 +1,6 @@
-# ubuntu-ws
+# linux-ws
 
-My Ubuntu 20.04 virtual workstation settings.
+My reproducible Linux workstation setup.
 
 I use Visual Studio Code to connect to the VM using Remote SSH feature to work in isolated VM.
 
