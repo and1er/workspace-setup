@@ -4,6 +4,8 @@ My reproducible Linux workstation setup.
 
 I use Visual Studio Code to connect to the VM using Remote SSH feature to work in isolated VM.
 
+[![GitHub Super-Linter](https://github.com/and1er/linux-ws/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+
 ## Workflow
 
 ### 1. Create a VM
