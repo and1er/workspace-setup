@@ -19,47 +19,70 @@ sudo apt install \
     python3-venv
 ```
 
-## Ansible Installation
+## Ansible v5 Installation
 
 Ansible is installed to a python virtual environment (venv).
 In this case it's possible to have multiple Ansible versions in parallel and to get any version.
 
-To create a venv with Ansible 3
+Create a venv to install Ansible v5 (requires Python 3.8+) there
 
 ```bash
-python3 -m venv ~/ansible_venv/v3
+python3 -m venv ~/ansible_venv/v5
+```
 
-source ~/ansible_venv/v3/bin/activate
+Activate the venv
 
-(v3) $ pip install wheel 'ansible>=3.0,<4'
+```bash
+source ~/ansible_venv/v5/bin/activate
+```
 
-(v3) $ ansible --version
-ansible 2.10.15
+Upgrade pip
+
+```bash
+(v5) $ python -m pip install -U pip
+```
+
+Install Ansible with venv activated (see command prompt `v5` prefix)
+
+```bash
+(v5) $ pip install wheel 'ansible>=5.0,<6'
+```
+
+Ansible version verification.
+
+```bash
+(v5) $ ansible --version
+ansible [core 2.12.1]
   config file = None
   configured module search path = ['/home/username/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
-  ansible python module location = /home/username/ansible_venv/v3/lib/python3.9/site-packages/ansible
-  executable location = /home/username/ansible_venv/v3/bin/ansible
+  ansible python module location = /home/username/ansible_venv/v5/lib/python3.9/site-packages/ansible
+  ansible collection location = /home/username/.ansible/collections:/usr/share/ansible/collections
+  executable location = /home/username/ansible_venv/v5/bin/ansible
   python version = 3.9.7 (default, Sep 10 2021, 14:59:43) [GCC 11.2.0]
+  jinja version = 3.0.3
+  libyaml = True
 
-(v3) $ pip list
+(v5) $ pip list
 Package       Version
 ------------- -------
-ansible       3.4.0
-ansible-base  2.10.15
+ansible       5.1.0
+ansible-core  2.12.1
 cffi          1.15.0
-cryptography  35.0.0
+cryptography  36.0.1
 Jinja2        3.0.3
 MarkupSafe    2.0.1
 packaging     21.3
-pip           20.3.4
-pkg-resources 0.0.0
+pip           21.3.1
+pkg_resources 0.0.0
 pycparser     2.21
 pyparsing     3.0.6
 PyYAML        6.0
+resolvelib    0.5.4
 setuptools    44.1.1
-wheel         0.37.0
-
+wheel         0.37.1
 ```
+
+## Legacy Ansible 2.9
 
 If Ansible 2.9 is also needed:
 
@@ -89,7 +112,7 @@ cd linux-ws/provisioning/ansible/
 Activate a venv with Ansible
 
 ```bash
-source ~/ansible_venv/v3/bin/activate
+source ~/ansible_venv/v5/bin/activate
 ```
 
 Install Ansible role and collection requirements
