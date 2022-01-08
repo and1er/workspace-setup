@@ -1,5 +1,24 @@
 # VM Provisioning with Ansible
 
+## Requiements
+
+VM has packages
+
+* `git` to clone the repo;
+* Python 3 with `pip3` and `venv` for further local Ansible installation for self-provisioning.
+
+## Ubuntu Packages
+
+Install the packages for further Ansible installation
+
+```bash
+sudo apt install \
+    git \
+    python3 \
+    python3-pip \
+    python3-venv
+```
+
 ## Ansible Installation
 
 Ansible is installed to a python virtual environment (venv).

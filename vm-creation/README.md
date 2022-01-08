@@ -2,14 +2,13 @@
 
 ## Requirements
 
-1. VM is available for SSH connections (via terminal and VSCode Remote-SSH).
-2. VM has packages
-    * `git` to clone the repo;
-    * Python 3 with `pip3` and `venv` for further local Ansible installation for self-provisioning.
+1. There's a non-root sudo user for work.
+2. VM is available for incoming SSH connections (via terminal and VSCode Remote-SSH) on _custom_ TCP port.
+3. `root` SSH access is disabled.
 
 ## OS
 
-As OS for now only **Ubuntu 20.04** was taken. But in the future I would try another Linux distributions, maybe
+As OS for now only **Ubuntu 20.04** and **21.10** were taken. But in the future I would try another Linux distributions, maybe
 
 * Fedora;
 * Manjaro.

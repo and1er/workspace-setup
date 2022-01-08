@@ -2,7 +2,7 @@
 
 If you create a VM manually, you could tune it as you wish, but it's necessary to set SSH server up, running and make firewall rules to allow incoming connection to SSH port.
 
-## Ubuntu Host
+## Ubuntu 21.10 host
 
 Tested on freshly created Ubuntu 21.10 desktop.
 
@@ -29,14 +29,4 @@ Add public SSH key for passwordless authentication
 ```bash
 mkdir -p ~/.ssh
 echo "ssh-XXX this is my public key" > ~/.ssh/authorized_keys
-```
-
-Install the packages for further Ansible installation
-
-```bash
-sudo apt install \
-    git \
-    python3 \
-    python3-pip \
-    python3-venv
 ```
