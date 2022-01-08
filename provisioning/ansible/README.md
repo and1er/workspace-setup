@@ -82,8 +82,8 @@ ansible 2.9.18
 Clone the repository
 
 ```bash
-git clone https://github.com/username/ubuntu-ws.git
-cd ubuntu-ws/
+git clone https://github.com/and1er/linux-ws.git
+cd linux-ws/provisioning/ansible/
 ```
 
 Activate a venv with Ansible
