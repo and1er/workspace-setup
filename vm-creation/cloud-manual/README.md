@@ -12,7 +12,7 @@ Create an instance manually in your cloud provider console and set it up almost 
 sudo apt update && sudo apt upgrade
 ```
 
-Choose new user name as variable
+Choose new username as variable
 
 ```bash
 NEW_USERNAME=USERNAME
