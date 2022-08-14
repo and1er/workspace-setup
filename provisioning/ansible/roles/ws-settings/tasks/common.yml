@@ -16,7 +16,9 @@
     path: "{{ user_bin_dir }}"
     state: directory
 
-- name: Deploy .bash_profile file.
-  template:
-    src: ./templates/.bash_profile.j2
-    dest: ~/.bash_profile
+- name: Adjust shell config "{{ shell_user_config }}".
+  ansible.builtin.lineinfile:
+    path: "{{ shell_user_config }}"
+    regexp: '{{ item.regexp }}'
+    line: "{{ item.line }}"
+  loop: "{{ shell_user_config_lines }}"

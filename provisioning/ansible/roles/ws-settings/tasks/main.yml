@@ -1,8 +1,11 @@
 ---
+- import_tasks: tasks/install_zsh.yml
+  when: shell_choice == 'zsh'
+  tags: zsh
 - import_tasks: tasks/common.yml
   tags: common
-- import_tasks: tasks/install_java.yml
-  tags: java
+# - import_tasks: tasks/install_java.yml
+#   tags: java
 - import_tasks: tasks/install_go.yml
   tags: go
 - import_tasks: tasks/install_terraform.yml

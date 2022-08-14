@@ -19,3 +19,10 @@
     cmd: curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b {{ golang_gopath_bin_dir }} v{{ golang_golangci_lint_version }}
   args:
     creates: "{{ golang_gopath_bin_dir }}/golangci-lint"
+
+- name: Add Go vars to shell config "{{ shell_user_config }}".
+  ansible.builtin.lineinfile:
+    path: "{{ shell_user_config }}"
+    regexp: '{{ item.regexp }}'
+    line: "{{ item.line }}"
+  loop: "{{ golang_shell_user_config_lines }}"
