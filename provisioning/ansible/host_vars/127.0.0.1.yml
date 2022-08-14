@@ -9,3 +9,5 @@ docker_install_compose: true
 docker_compose_version: "1.29.1"
 docker_users:
   - "{{ ansible_user_id }}"
+
+shell_choice: 'zsh'

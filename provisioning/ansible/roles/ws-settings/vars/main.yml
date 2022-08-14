@@ -25,7 +25,7 @@ packages_to_install:
 
 user_home_dir: "~"
 # user_home_dir: "{{ lookup('env','HOME') }}"
-user_bin_dir: ~/.local/bin/
+user_bin_dir: ~/.local/bin
 
 terraform_version: "0.15.0"
 terrascan_version: "1.5.0"
@@ -35,5 +35,21 @@ golang_gopath_dir: "{{ user_home_dir }}/go"
 golang_gopath_bin_dir: "{{ golang_gopath_dir }}/bin"
 golang_gopath_src_dir: "{{ golang_gopath_dir }}/src"
 golang_golangci_lint_version: "1.39.0"
+golang_shell_user_config_lines:
+  - regexp: '^export PATH=\$PATH:{{ user_bin_dir }}/go/bin'
+    line: "export PATH=$PATH:{{ user_bin_dir }}/go/bin"
+  - regexp: '^export GOPATH={{ golang_gopath_dir }}'
+    line: "export GOPATH={{ golang_gopath_dir }}"
+  - regexp: '^export PATH=\$PATH:{{ golang_gopath_bin_dir }}'
+    line: "export PATH=$PATH:{{ golang_gopath_bin_dir }}"
+
 
 java_jdk_package: openjdk-11-jdk
+
+shell_user_config: "{{ '~/.zshrc' if shell_choice == 'zsh' else '~/.bashrc' }}"
+shell_user_config_lines:
+  - regexp: '^export PATH=\$PATH:{{ user_bin_dir }}'
+    line: "export PATH=$PATH:{{ user_bin_dir }}"
+# TODO: append for no GUI cases.
+# GPG key prompt on Git commits.
+# export GPG_TTY=$(tty)

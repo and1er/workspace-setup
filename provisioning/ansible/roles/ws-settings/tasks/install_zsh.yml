@@ -1,0 +1,26 @@
+---
+# https://habr.com/ru/post/516004/
+
+- name: Update apt cache.
+  become: yes
+  apt:
+    update_cache: yes
+    cache_valid_time: 300
+
+- name: Install zsh package.
+  become: yes
+  apt:
+    state: present
+    name: "zsh"
+
+- name: Install Oh My Zsh.
+  shell:
+    cmd: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  args:
+    creates: "{{ user_home_dir }}/.oh-my-zsh"
+
+- name: Change the shell of user "{{ ansible_user_id }}" to zsh.
+  become: yes
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}"
+    shell: /bin/zsh
