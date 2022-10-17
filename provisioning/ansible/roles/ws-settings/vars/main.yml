@@ -48,7 +48,7 @@ java_jdk_package: openjdk-11-jdk
 
 shell_user_config: "{{ '~/.zshrc' if shell_choice == 'zsh' else '~/.bashrc' }}"
 shell_user_config_lines:
-  - regexp: '^export PATH=\$PATH:{{ user_bin_dir }}'
+  - regexp: '^export PATH=\$PATH:{{ user_bin_dir }}$'
     line: "export PATH=$PATH:{{ user_bin_dir }}"
 # TODO: append for no GUI cases.
 # GPG key prompt on Git commits.
