@@ -24,3 +24,16 @@
   ansible.builtin.user:
     name: "{{ ansible_user_id }}"
     shell: /bin/zsh
+
+- name: Clone zsh-autosuggestions repository.
+  ansible.builtin.git:
+    repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
+    dest: "{{ zsh_autosuggestions_clone_dir }}"
+    version: "{{ zsh_autosuggestions_version }}"
+
+- name: zsh shell config "{{ shell_user_config }}".
+  ansible.builtin.lineinfile:
+    path: "{{ shell_user_config }}"
+    regexp: '{{ item.regexp }}'
+    line: "{{ item.line }}"
+  loop: "{{ zsh_shell_user_config_lines }}"
