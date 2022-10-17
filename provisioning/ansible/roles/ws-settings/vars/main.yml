@@ -3,6 +3,11 @@ packages_to_install:
   - apt-transport-https
   - build-essential
   - ca-certificates
+  # https://hluk.github.io/CopyQ/
+  # copyq info config
+  - copyq
+  - copyq-plugins
+  - copyq-doc
   - curl
   - dkms
   - dnsutils
