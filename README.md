@@ -6,17 +6,18 @@ I use Visual Studio Code to connect to the VM using Remote SSH feature to work i
 
 [![GitHub Super-Linter](https://github.com/and1er/workspace-setup/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
-## Workflow
+## WS initialization
 
-### 1. Create a VM
+### Linux WS case
 
-See [VM Creation](./vm-creation/README.md).
+1. Create a VM. See [VM Creation](./vm-creation/README.md).
+2. Provision the VM. For now it's [Ansible](./provisioning/ansible/README.md), but maybe I will try Puppet/Chef/Salt in the future.
 
-### 2. Provision the VM
+### macOS WS case
 
-For now it's [Ansible](./provisioning/ansible/README.md), but maybe I will try Puppet/Chef/Salt in the future.
+A case when working directly on a macOS device without any Linux VM, see [macos-setup/README.md](./macos-setup/README.md).
 
-### 3. Prepare WS to work with GitHub
+## Prepare the WS to work with GitHub
 
 Generate SSH-keys
 
