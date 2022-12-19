@@ -1,10 +1,10 @@
-# linux-ws
+# workspace-ws
 
-My reproducible Linux workstation setup.
+My reproducible workstation setup.
 
 I use Visual Studio Code to connect to the VM using Remote SSH feature to work in isolated VM.
 
-[![GitHub Super-Linter](https://github.com/and1er/linux-ws/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+[![GitHub Super-Linter](https://github.com/and1er/workspace-setup/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
 ## Workflow
 
