@@ -4,7 +4,7 @@
 
 VM has packages
 
-* `git` to clone the repo;
+* `git` to clone the repository;
 * Python 3 with `pip3` and `venv` for further local Ansible installation for self-provisioning.
 
 ## Ubuntu Packages
