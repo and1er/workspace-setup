@@ -50,6 +50,12 @@ shell_user_config: "{{ '~/.zshrc' if shell_choice == 'zsh' else '~/.bashrc' }}"
 shell_user_config_lines:
   - regexp: '^export PATH=\$PATH:{{ user_bin_dir }}$'
     line: "export PATH=$PATH:{{ user_bin_dir }}"
+
+zsh_shell_user_config_lines:
+  - regexp: '^source {{ zsh_autosuggestions_clone_dir }}/zsh-autosuggestions.zsh$'
+    line: "source {{ zsh_autosuggestions_clone_dir }}/zsh-autosuggestions.zsh"
+zsh_autosuggestions_version: v0.7.0
+zsh_autosuggestions_clone_dir: "{{ user_home_dir }}/.zsh/zsh-autosuggestions"
 # TODO: append for no GUI cases.
 # GPG key prompt on Git commits.
 # export GPG_TTY=$(tty)
