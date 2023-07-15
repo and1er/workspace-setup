@@ -20,6 +20,7 @@ brew install --cask visual-studio-code
 brew install --cask libreoffice
 brew install --cask zoom
 brew install gnupg
+brew install bat
 ```
 
 ## Docker setup
