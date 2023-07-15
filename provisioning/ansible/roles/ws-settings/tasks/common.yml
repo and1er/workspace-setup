@@ -16,6 +16,13 @@
     path: "{{ user_bin_dir }}"
     state: directory
 
+- name: Create symlinks to "{{ user_bin_dir }}"
+  file:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link
+  loop: "{{ user_bin_symlinks }}"
+
 - name: Adjust shell config "{{ shell_user_config }}".
   ansible.builtin.lineinfile:
     path: "{{ shell_user_config }}"

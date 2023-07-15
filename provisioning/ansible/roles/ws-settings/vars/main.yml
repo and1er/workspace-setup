@@ -1,11 +1,13 @@
 ---
 packages_to_install:
   - apt-transport-https
+  - bat
   - build-essential
   - ca-certificates
   - curl
   - dkms
   - dnsutils
+  - exa
   - git
   - jq
   - man
@@ -26,6 +28,9 @@ packages_to_install:
 user_home_dir: "~"
 # user_home_dir: "{{ lookup('env','HOME') }}"
 user_bin_dir: ~/.local/bin
+user_bin_symlinks:
+  - src: /usr/bin/batcat
+    dest: "{{ user_bin_dir }}/bat"
 
 terraform_version: "0.15.0"
 terrascan_version: "1.5.0"
@@ -50,6 +55,10 @@ shell_user_config: "{{ '~/.zshrc' if shell_choice == 'zsh' else '~/.bashrc' }}"
 shell_user_config_lines:
   - regexp: '^export PATH=\$PATH:{{ user_bin_dir }}$'
     line: "export PATH=$PATH:{{ user_bin_dir }}"
+  - regexp: "^alias ls='exa'$"
+    line: "alias ls='exa'"
+  - regexp: "^alias gchma='git checkout main; git pull'$"
+    line: "alias gchma='git checkout main; git pull'"
 
 zsh_shell_user_config_lines:
   - regexp: '^source {{ zsh_autosuggestions_clone_dir }}/zsh-autosuggestions.zsh$'
