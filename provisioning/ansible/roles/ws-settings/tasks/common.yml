@@ -18,8 +18,9 @@
 
 - name: Create symlinks to "{{ user_bin_dir }}"
   file:
-    path: "{{ user_bin_dir }}"
-    state: directory
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link
   loop: "{{ user_bin_symlinks }}"
 
 - name: Adjust shell config "{{ shell_user_config }}".

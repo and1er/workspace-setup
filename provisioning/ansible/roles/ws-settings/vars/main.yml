@@ -7,6 +7,7 @@ packages_to_install:
   - curl
   - dkms
   - dnsutils
+  - exa
   - git
   - jq
   - man
@@ -54,6 +55,10 @@ shell_user_config: "{{ '~/.zshrc' if shell_choice == 'zsh' else '~/.bashrc' }}"
 shell_user_config_lines:
   - regexp: '^export PATH=\$PATH:{{ user_bin_dir }}$'
     line: "export PATH=$PATH:{{ user_bin_dir }}"
+  - regexp: "^alias ls='exa'$"
+    line: "alias ls='exa'"
+  - regexp: "^alias gchma='git checkout main; git pull'$"
+    line: "alias gchma='git checkout main; git pull'"
 
 zsh_shell_user_config_lines:
   - regexp: '^source {{ zsh_autosuggestions_clone_dir }}/zsh-autosuggestions.zsh$'
