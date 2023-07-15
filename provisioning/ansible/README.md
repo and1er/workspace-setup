@@ -4,7 +4,7 @@
 
 VM has packages
 
-* `git` to clone the repo;
+* `git` to clone the repository;
 * Python 3 with `pip3` and `venv` for further local Ansible installation for self-provisioning.
 
 ## Ubuntu Packages
@@ -105,8 +105,8 @@ ansible 2.9.18
 Clone the repository
 
 ```bash
-git clone https://github.com/and1er/linux-ws.git
-cd linux-ws/provisioning/ansible/
+git clone https://github.com/and1er/workstation-setup.git
+cd workstation-setup/provisioning/ansible/
 ```
 
 Activate a venv with Ansible
