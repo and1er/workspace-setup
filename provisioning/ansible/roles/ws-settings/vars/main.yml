@@ -1,6 +1,7 @@
 ---
 packages_to_install:
   - apt-transport-https
+  - bat
   - build-essential
   - ca-certificates
   - curl
@@ -26,6 +27,9 @@ packages_to_install:
 user_home_dir: "~"
 # user_home_dir: "{{ lookup('env','HOME') }}"
 user_bin_dir: ~/.local/bin
+user_bin_symlinks:
+  - src: /usr/bin/batcat
+    dest: "{{ user_bin_dir }}/bat"
 
 terraform_version: "0.15.0"
 terrascan_version: "1.5.0"
